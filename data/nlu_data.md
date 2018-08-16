@@ -65,3 +65,14 @@
 - nah
 - no and no again
 - no go
+
+## intent: create_event
+- create new event
+- add new task into calendar
+- set new item to my calendar
+- add new item in scheduler
+- update calendar - add task
+- I want to add some event to the calendar
+- please create item for me
+- could you add item into calendar?
+- hey man how are you? I want to set some event

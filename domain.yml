@@ -5,6 +5,8 @@ intents:
   - bye
   - deny
   - affirm
+  - create_event
+  - remove_event
 
 entities:
   # replace with your entities
@@ -29,4 +31,5 @@ actions:
   - utter_greet
   - utter_thank
   - utter_bye
-  - actions.ActionExample
+  - actions.CreateEvent
+  - actions.RemoveEvent
