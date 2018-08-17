@@ -10,4 +10,5 @@
 * bye
     - utter_bye
     
-## create_event
+## create calendar event
+* create_event

@@ -1,4 +1,4 @@
-.PHONY: clean train-nlu train-core cmdline server
+.PHONY: clean train-nlu train-core cmdline make train-nluserver
 
 TEST_PATH=./
 

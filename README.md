@@ -13,7 +13,10 @@ To install the necessary requirements, run:
 ```
 pip install -r requirements.txt
 ```
-
+install all dependencies ever needed
+```
+pip install -r alt_requirements/requirements_full.txt
+```
 ## Usage
 
 To train the NLU model, run ``make train-nlu``
@@ -21,6 +24,7 @@ To train the NLU model, run ``make train-nlu``
 To train the Core model, run ``make train-core``
 
 To run the bot on the command line run ``make cmdline``
+To run the core-server on the command line run ``make core-server``
 
 ## What now?
 
