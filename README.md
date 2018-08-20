@@ -7,7 +7,22 @@ For more information on the Rasa Stack, please visit the docs here:
 - [Rasa NLU](https://nlu.rasa.com/)
 
 ## Setup
+```
+pip install rasa_core
+```
 
+
+RASA-NLU with spyCy ***************************************
+```
+pip install rasa_nlu[spacy]
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_md en
+```
+
+   == for tensorflow *****************************************
+```
+pip install rasa_nlu[tensorflow]
+```
 To install the necessary requirements, run:
 
 ```
