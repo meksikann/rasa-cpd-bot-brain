@@ -7,15 +7,14 @@ intents:
   - affirm
   - create_event
   - remove_event
+  - inform
 
 entities:
-  # replace with your entities
-  - example_entity
+  - event_name
 
 slots:
-  # replace with your slots
-  example_slot:
-    type: unfeaturized
+  event_name:
+    type: text
 
 templates:
   # templates the bot should respond with
@@ -25,11 +24,23 @@ templates:
     - "You're welcome!"
   utter_bye:
     - "Goodbye"
+  utter_how_can_help:
+    - "how can i helps"
+  utter_on_it:
+    - "I am on it"
+  utter_ask_event_name:
+    - "what is event name"
+  utter_event_saved:
+    - "event saved"
 
 actions:
   # all the utter actions from the templates, plus any custom actions
   - utter_greet
   - utter_thank
   - utter_bye
+  - utter_how_can_help
+  - utter_on_it
+  - utter_ask_event_name
+  - utter_event_saved
   - actions.CreateEvent
   - actions.RemoveEvent

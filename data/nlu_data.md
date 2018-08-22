@@ -76,3 +76,16 @@
 - please create item for me
 - could you add item into calendar?
 - hey man how are you? I want to set some event
+- I want you to schedule [choose hotel in kamyanets](event_name) it for 1 p.m
+- Hey set calendar for me for [do bot testing](event_name)
+
+## intent: inform
+- it's [go shopping](event_name) called
+- [test one](event_name)
+- [make a very good bot testing](event_name)
+- [spend some time for makeing bot recognize long entyties](event_name)
+- the event name is  [make classwalet call](event_name)
+- please book time for me for [make a call](event_name)
+- [make interview](event_name)
+- ok what about [have call with CEO](event_name)
+- I want you to schedule [choose hotel in kamyanets](event_name) it for 1 p.m

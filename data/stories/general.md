@@ -9,6 +9,3 @@
 ## bye
 * bye
     - utter_bye
-    
-## create calendar event
-* create_event
