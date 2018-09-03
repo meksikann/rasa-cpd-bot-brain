@@ -8,6 +8,7 @@ intents:
   - create_event
   - remove_event
   - inform
+  - show_my_events
 
 entities:
   - event_name
@@ -44,3 +45,4 @@ actions:
   - utter_event_saved
   - actions.CreateEvent
   - actions.RemoveEvent
+  - actions.ShowMyEvents

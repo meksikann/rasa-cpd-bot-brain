@@ -20,3 +20,13 @@ class RemoveEvent(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         return []
+
+class ShowMyEvents(Action):
+
+    def name(self):
+        # you can then use action_example in your stories
+        return "action_show_my_events"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        return []

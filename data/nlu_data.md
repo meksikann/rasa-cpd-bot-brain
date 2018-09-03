@@ -89,3 +89,13 @@
 - [make interview](event_name)
 - ok what about [have call with CEO](event_name)
 - I want you to schedule [choose hotel in kamyanets](event_name) it for 1 p.m
+
+## intent: show_my_events
+- hello can you show me my events please ?
+- events?
+- any stuff for me
+- show me my tasks
+- list events
+- list me please my todos
+- I want to see my events from calendar
+- review my events
