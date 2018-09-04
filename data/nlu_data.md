@@ -99,3 +99,16 @@
 - list me please my todos
 - I want to see my events from calendar
 - review my events
+
+## intent: check_room_available
+- is it available?
+- is [second hall](room_name) free?
+- tell me if [first conference room](room_name) is free at 1pm
+- I am curious if  [5](room_name) is empty in an hour
+- would  you be so king to ping me if [big hall](room_name) is free now?
+- Has anyone occupied [first room](room_name) at 5 o'clock
+- Can I book a  [main conference room](room_name) today?
+- Is there an available spot for the [first room](room_name)
+- Could I reserve a room number [1](room_name) for one hour
+- is main [conferance room](room_name) available now?
+

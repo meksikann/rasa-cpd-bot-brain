@@ -31,10 +31,9 @@ CMD [ "python", "-m spacy link en_core_web_md en" ]
 RUN pip install rasa_core
 
 # volumes
+VOLUME ["/app/data", "/app/models"]
 
 
 EXPOSE 5005
 
-CMD [ "python", "-m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu --project current --verbose" ]
-CMD [ "python", "-m rasa_core.train -d domain.yml -s data/stories.md -o models/current/dialogue --epochs 200" ]
 CMD [ "python", "-m rasa_core.server -d models/current/dialogue -u models/current/nlu -o out.log" ]

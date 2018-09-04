@@ -30,3 +30,13 @@ class ShowMyEvents(Action):
     def run(self, dispatcher, tracker, domain):
         # what your action should do
         return []
+
+class CheckRoomAvailable(Action):
+
+    def name(self):
+        # you can then use action_example in your stories
+        return "action_check_room_available"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        return []

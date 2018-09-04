@@ -6,5 +6,9 @@ pipeline:
   - name: "intent_featurizer_spacy"
   - name: "intent_classifier_sklearn"
   - name: "ner_crf"
+  - name: "ner_duckling_http"
+    url: "http://0.0.0.0:8000"
+    dimensions: ["time"]
+    timezone: "Europe/Kiev"
   - name: "ner_synonyms"
     dimensions: ["email"]
