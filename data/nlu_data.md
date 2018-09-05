@@ -104,11 +104,29 @@
 - is it available?
 - is [second hall](room_name) free?
 - tell me if [first conference room](room_name) is free at 1pm
-- I am curious if  [5](room_name) is empty in an hour
+- I am curious if  [2](room_name) is empty in an hour
 - would  you be so king to ping me if [big hall](room_name) is free now?
 - Has anyone occupied [first room](room_name) at 5 o'clock
 - Can I book a  [main conference room](room_name) today?
 - Is there an available spot for the [first room](room_name)
-- Could I reserve a room number [1](room_name) for one hour
-- is main [conferance room](room_name) available now?
+- Could I reserve a [room number 1](room_name) for one hour
+- is [small room](room_name) available now?
+- I wanna take [second conference room](room_name)
+- show me if [main room](room_name) available in an hour?
+- would you be so king to ping me if [main room](room_name) is free now?
+- [the big one](room_name)
 
+## synonym:first conference room
+- room one
+- room 1
+- big hall
+- main conference room
+- first room
+- first hall
+- main hall
+- main room
+- the big one
+
+## synonym:second conference room
+- second hall
+- room 2
