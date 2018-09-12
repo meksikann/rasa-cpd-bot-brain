@@ -25,13 +25,14 @@ COPY . /app
 
 # rasa stack
 ## rasa nlu
-RUN pip install -r alt_requirements/requirements_full.txt --no-cache-dir
+RUN pip install -r alt_requirements/requirements_full.txt
 
-RUN pip install -e . --no-cache-dir
 
 ## spacy models
-RUN pip install rasa_nlu[spacy] --no-cache-dir
+RUN pip install rasa_nlu[spacy]
 CMD [ "python", "-m spacy download en_core_web_md" ]
+CMD [ "python", "-m spacy download en" ]
+CMD [ "python", "-m spacy.en.download" ]
 CMD [ "python", "-m spacy link en_core_web_md en" ]
 
 ## rasa core

@@ -29,4 +29,6 @@ cmdline:
 	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu
 core-server:
 	python -m rasa_core.server -d models/current/dialogue -u models/current/nlu -o out.log
+core-learn:
+	python -m rasa_core_sdk.endpoint --actions actions& python -m rasa_core.train --online -o models/current/dialogue -d domain.yml -s data/stories -u models/current/nlu
 

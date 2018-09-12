@@ -130,3 +130,6 @@
 ## synonym:second conference room
 - second hall
 - room 2
+- second room
+- small room
+- small conference room

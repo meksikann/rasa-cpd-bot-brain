@@ -54,3 +54,13 @@ To run the bot on the command line run ``make cmdline``
 To run the core-server on the command line run ``make core-server``
 ## test nlp url:
 http://localhost:5005/conversations/default/parse?query=hello
+
+## Interactive learning
+ ``make core-learn``
+ then proceed conversation like here https://rasa.com/docs/core/interactive_learning/
+ to execute ations during training make sure actions.py RUN methods do what needs to be done..
+ e.g  if bot needs to execute action_check_room_available ,
+ the CheckRoomAvailable.run must set slot is_room_available TRUE/FALSE, deppending if room available.
+
+the second possible way to execute actions is here
+https://rasa.com/docs/core/customactions/ Custom Actions.

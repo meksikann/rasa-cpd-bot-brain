@@ -24,6 +24,7 @@ slots:
     type: text
   is_room_available:
     type: bool
+    initial_value: False
 
 templates:
   # templates the bot should respond with
