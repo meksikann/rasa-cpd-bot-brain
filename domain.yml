@@ -25,6 +25,9 @@ slots:
   is_room_available:
     type: bool
     initial_value: False
+  is_room_exists:
+    type: bool
+    initial_value: False
 
 templates:
   # templates the bot should respond with
@@ -48,7 +51,10 @@ templates:
     - "room is free"
   utter_room_is_busy:
     - "room is busy"
-
+  utter_fallback:
+    - "sorry, I did not get you..."
+  utter_room_not_exists:
+    - "room not exists"
 actions:
   # all the utter actions from the templates, plus any custom actions
   - utter_greet
@@ -61,7 +67,10 @@ actions:
   - utter_ask_room_name
   - utter_room_is_free
   - utter_room_is_busy
+  - utter_fallback
+  - utter_room_not_exists
   - actions.CreateEvent
   - actions.RemoveEvent
   - actions.ShowMyEvents
   - actions.CheckRoomAvailable
+  - actions.CheckRoomExists
