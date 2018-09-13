@@ -1,40 +1,49 @@
 FROM python:2.7-slim
 
-# Run updates, install basics and cleanup
- # - build-essential: Compile specific dependencies
- # - git-core: Checkout git repos
-RUN apt-get update -qq \
-    && apt-get install -y --no-install-recommends build-essential git-core openssl libssl-dev libffi6 libffi-dev curl  \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+SHELL ["/bin/bash", "-c"]
+RUN apt-get update -qq && \
+  apt-get install -y --no-install-recommends \
+  build-essential \
+  wget \
+  openssh-client \
+  graphviz-dev \
+  pkg-config \
+  git-core \
+  openssl \
+  libssl-dev \
+  libffi6 \
+  libffi-dev \
+  libpng-dev \
+  curl && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  mkdir /app
 
-# use bash always
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
-# Default to UTF-8 file.encoding
-ENV LANG C.UTF-8
-
-# workdir
 WORKDIR /app
+
 COPY . /app
 
 # rasa stack
 ## rasa nlu
 RUN pip install -r alt_requirements/requirements_full.txt
 
+
 ## spacy models
 RUN pip install rasa_nlu[spacy]
 CMD [ "python", "-m spacy download en_core_web_md" ]
+CMD [ "python", "-m spacy download en" ]
+CMD [ "python", "-m spacy.en.download" ]
 CMD [ "python", "-m spacy link en_core_web_md en" ]
 
 ## rasa core
 RUN pip install rasa_core
 
 # volumes
+VOLUME ["/app/models/current/dialogue", "/app/models/current/nlu"]
 
 
 EXPOSE 5005
 
-CMD [ "python", "-m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu --project current --verbose" ]
-CMD [ "python", "-m rasa_core.train -d domain.yml -s data/stories.md -o models/current/dialogue --epochs 200" ]
-CMD [ "python", "-m rasa_core.server -d models/current/dialogue -u models/current/nlu -o out.log" ]
+ENTRYPOINT ["./entrypoint.sh"]
+
+CMD ["start", "-d", "./models/current/dialogue", "-u", "./models/current/nlu"]

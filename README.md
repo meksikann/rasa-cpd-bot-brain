@@ -1,6 +1,4 @@
-# Starter Pack for Rasa Stack
-
-This starter pack helps you build a bot faster with [Rasa Stack](http://rasa.com/products/rasa-stack/). Apart from a basic file and folder structure, it gives you some initial training data. Clone this repo and start building your bot.
+used starter Pack for Rasa Stack
 
 For more information on the Rasa Stack, please visit the docs here:
 - [Rasa Core](https://core.rasa.com/)
@@ -32,15 +30,38 @@ install all dependencies ever needed
 ```
 pip install -r alt_requirements/requirements_full.txt
 ```
+*****************************************************************
+
 ## Usage
 
+Run duckling docker container if you use ner_duckling_http in pipeline (duckling used to recognize mostly etc. dates https://duckling.wit.ai/)
+http://rasa.com/docs/nlu/master/components/#id2
+
+```
+docker run -p 8000:8000 rasa/duckling
+```
+
+
+Before train nlu data take a look at nlu_data.md = need to type in proper data for training.
+ Specially Synonyms part, as for now it is made as example.
+ remember Synonyms maps synonym to entity, but you need to make a proper training data with synonyms...
+Rememeber! when entity name ans slot name are equal slot set automaticaly when intent received.
 To train the NLU model, run ``make train-nlu``
 
 To train the Core model, run ``make train-core``
 
 To run the bot on the command line run ``make cmdline``
 To run the core-server on the command line run ``make core-server``
+## test nlp url:
+http://localhost:5005/conversations/default/parse?query=hello
 
-## What now?
+## Interactive learning
+ ``make core-learn``
+ then proceed conversation like here https://rasa.com/docs/core/interactive_learning/
+ to execute ations during training make sure actions.py RUN methods do what needs to be done..
+ e.g  if bot needs to execute action_check_room_available ,
+ the CheckRoomAvailable.run must set slot is_room_available TRUE/FALSE, deppending if room available.
+ Used fake data from learning_data.json
 
-To continue developing your bot, you can start by adding some NLU data for intents/entities relevant to your use case. These then need to be added to your domain file. From there you can add more utterances for the bot, or custom actions you've written in `actions.py` and then write stories using these. 
+the second possible way to execute actions is here
+https://rasa.com/docs/core/customactions/ Custom Actions.
